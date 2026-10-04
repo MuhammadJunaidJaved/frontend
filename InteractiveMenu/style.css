@@ -1,0 +1,60 @@
+body {
+    background-color: #534b62;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.7rem;
+    position: relative;
+    display: inline-block;
+    transition: filter .5s, font-size .5s;
+}
+
+ul:hover li a {
+    color: #DBE4C6;
+}
+
+li a:hover {
+    filter: blue(0);
+    color: white;
+}
+
+ul  {
+    overflow: hidden;
+}
+
+li:hover a {
+    font-size: 3rem;
+    animation: revealText 3s;
+}
+
+@keyframes revealtext {
+    from {
+        transform: translateX(-30%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+li a:before {
+    position: absolute;
+    content: '';
+    bottom: .1em;
+    left: -.7em;
+    height: .9px;
+    border-bottom: 2px solid white;
+    width: 100%;
+    transform: translateX(-127%);
+    transition: transform 2s;
+}
+
+li:hover a:before {
+    transform: translateX(-30%);
+}
